@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Timers App</string>
+    <string name="timers_screen_hours">hours</string>
+    <string name="timers_screen_minutes">minutes</string>
+    <string name="timers_screen_seconds">seconds</string>
+    <string name="timers_screen_button_start">Start!</string>
+    <string name="timers_screen_running_timers">Running timers:</string>
+    <string name="notification_timer_finished">You timer %1$s has finished!</string>
+    <string name="notification_time_s_up">Time\'s Up!</string>
+    <string name="toast_turn_on_notifications_in_settings">You can turn on notifications in the app settings</string>
+</resources>
