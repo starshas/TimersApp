@@ -25,10 +25,12 @@ class TimersScreenTest {
         composeTestRule
             .onNodeWithText("hours")
             .performTextInput(hours)
+
         val minutes = "20"
         composeTestRule
             .onNodeWithText("minutes")
             .performTextInput(minutes)
+
         val seconds = "42"
         composeTestRule
             .onNodeWithText("seconds")
@@ -37,6 +39,7 @@ class TimersScreenTest {
         composeTestRule
             .onNodeWithText("Start!")
             .performClick()
+
         composeTestRule
             .onNodeWithText("0$hours:$minutes:$seconds")
             .assertExists("Timer should display the time that was input")

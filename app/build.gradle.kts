@@ -52,35 +52,50 @@ android {
 }
 
 dependencies {
+    // Core
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+
+    // Compose
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.rules)
+    debugImplementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // AppCompat & Material Components
     implementation(libs.androidx.appcompat)
     implementation(libs.google.android.material)
-    implementation(libs.androidx.compose.material)
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    annotationProcessor(libs.androidx.room.compiler)
-    kapt(libs.androidx.room.compiler)
-    implementation(libs.io.mockk.mockk)
+
+    // Lifecycle & Activity
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+
+    // Hilt
     implementation(libs.dagger.hilt.android)
-    implementation(libs.androidx.lifecycle.runtime.compose)
-    implementation(libs.androidx.rules)
-    testImplementation(libs.kotlinx.coroutines.test)
     kapt(libs.dagger.hilt.android.compiler)
+    kapt(libs.dagger.hilt.android.compiler)
+
+    // Navigation
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
+
+    // Testing
     testImplementation(libs.junit)
+    implementation(libs.androidx.core.ktx)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.io.mockk.mockk)
+    androidTestImplementation(libs.io.mockk.mockk)
+    androidTestImplementation(libs.androidx.compose.ui)
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.test.core.ktx)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 }

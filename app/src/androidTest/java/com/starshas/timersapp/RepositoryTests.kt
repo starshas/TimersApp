@@ -57,7 +57,7 @@ class RepositoryTests {
     }
 
     @Test
-    fun `repository addTimer saves data correctly`() = runTest {
+    fun repositoryAddTimerSavesDataCorrectly() = runTest {
         val timerFinishTime = System.currentTimeMillis() + 3600000
         timerDbRepository.addTimer(timerFinishTime)
 
@@ -67,7 +67,7 @@ class RepositoryTests {
     }
 
     @Test
-    fun `repository getAllTimers returns correct data`() = runTest {
+    fun repositoryGetAllTimersReturnsCorrectData() = runTest {
         val timeOfTimersToAdd = listOf(
             System.currentTimeMillis() + 3600000,
             System.currentTimeMillis() + 7200000
@@ -82,7 +82,7 @@ class RepositoryTests {
     }
 
     @Test
-    fun `repository deleteById removes correct timer`() = runBlocking {
+    fun repositoryDeleteByIdRemovesCorrectTimer() = runBlocking {
         val id = timerDbRepository
             .addTimer(System.currentTimeMillis() + 3600000)
         val id2 = timerDbRepository
@@ -96,7 +96,7 @@ class RepositoryTests {
     }
 
     @Test
-    fun `repository test SaveTimerUseCase success`() = runTest {
+    fun repositoryTestSaveTimerUseCaseSuccess() = runTest {
         val timerTime = TimerTime(hours = 1)
         val currentTimeMillis = System.currentTimeMillis()
         val finishTimeMillis = currentTimeMillis + timerTime.toTotalMillis()

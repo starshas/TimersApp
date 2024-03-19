@@ -56,7 +56,7 @@ class UseCasesTests {
     }
 
     @Test
-    fun `test GetAllTimersUseCase success`() = runTest {
+    fun getAllTimersUseCaseSuccess() = runTest {
         val currentTimeMillis = System.currentTimeMillis()
         val timerTime1 = TimerTime(hours = 1, minutes = 2, seconds = 3)
         val timerTime2 = TimerTime(hours = 4, minutes = 5, seconds = 6)
@@ -117,7 +117,7 @@ class UseCasesTests {
     }
 
     @Test
-    fun `test DeleteTimersUseCase success`() = runTest {
+    fun deleteTimersUseCaseSuccess() = runTest {
         val timerTime = TimerTime(minutes = 1)
         val timerTime2 = TimerTime(seconds = 2)
         val timerTime3 = TimerTime(seconds = 3)
